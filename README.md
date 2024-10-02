@@ -1,6 +1,6 @@
 # Efficient Data Stream Anomaly Detection
 
-This project simulates a data stream (a sine wave with random anomalies) and uses a Z-Score based anomaly detection algorithm to identify outliers. The data is streamed to a Kafka topic and stored locally as a JSON file. The anomalies are then visualized using `matplotlib`.
+This project simulates a data stream (a sine wave with random anomalies) and uses a Z-Score based anomaly detection algorithm to identify outliers. The data is streamed to a Kafka topic which is consumed by the anomaly detector. The anomalies are then visualized using `matplotlib`.
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
@@ -10,7 +10,7 @@ This project simulates a data stream (a sine wave with random anomalies) and use
 
 ## Project Overview
 
-The goal of this project is to simulate a continuous data stream and detect anomalies in real-time. The data consists of a sine wave with occasional random spikes (anomalies). Kafka is used to simulate a real-time stream of data, which is also saved locally as a JSON file.
+The goal of this project is to simulate a continuous data stream and detect anomalies in real-time. The data consists of a sine wave with occasional random spikes (anomalies). Kafka is used to simulate a real-time stream of data.
 
 An anomaly detection algorithm based on the Z-Score method is applied to flag values that deviate significantly from the normal pattern. The detected anomalies are visualized using `matplotlib`.
 
@@ -18,7 +18,6 @@ An anomaly detection algorithm based on the Z-Score method is applied to flag va
 
 - Simulates a data stream of sine wave values with random anomalies.
 - Sends data to a Kafka topic (`raw-data`).
-- Saves the data in a local JSON file (`output.json`).
 - Uses Z-Score based anomaly detection.
 - Visualizes the data stream and detected anomalies using `matplotlib`.
 
@@ -43,4 +42,4 @@ Run the `kafka-stream.py` script to generate and stream data to Kafka:
 
 
 Detect anomalies:  
-`python anomaly-detector.py`
+`python anomaly-detector-kafka.py`
